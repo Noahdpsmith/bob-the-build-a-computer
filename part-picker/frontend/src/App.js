@@ -6,18 +6,24 @@ import Newbuild from './components/Newbuild.js';
 import MyBuilds from './components/MyBuilds.js';
 import Parts from './components/Parts.js';
 import Header from './components/Header.js';
+import Footer from './components/Footer.js';
 
 function App() {
   return (
     <Router>
+
       <Header/>
-      <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/newbuild' component={Newbuild} />
-        <Route exact path='/mybuilds' component={MyBuilds} />
-        <Route exact path='/parts' component={Parts} />
-      </Switch>
+
+        <Switch>
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/newbuild' component={Newbuild} />
+          <Route exact path='/mybuilds' component={MyBuilds} />
+          <Route exact path='/parts' component={Parts} />
+        </Switch>
+
+      <Footer/>
+
     </Router>
   );
 }

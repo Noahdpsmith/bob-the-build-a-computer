@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TempLogo from '../images/temporaryLogo.png';
+import Styled from 'styled-components';
+
 const Header = () => {
 
     return(
-       <header>
+       <StyledHeader>
            <div className='logo'>
                 <img src={TempLogo} alt='logo'/>
            </div>
@@ -15,10 +17,14 @@ const Header = () => {
                 <Link className = 'linkButton' to='/mybuilds'>My Builds</Link>
                 <Link className = 'linkButton' to='/login'>Login</Link>
            </div>
-       </header>
+       </StyledHeader>
     );
 }
 
 
 
 export default Header;
+
+const StyledHeader = Styled.header `
+    
+`
