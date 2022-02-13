@@ -7,6 +7,16 @@ import MyBuilds from './components/MyBuilds.js';
 import Parts from './components/Parts.js';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
+import Cpu from './components/part_components/Cpu';
+import Ram from './components/part_components/Ram';
+import Motherboard from './components/part_components/Mobo';
+import Gpu from './components/part_components/Gpu';
+import St0rage from './components/part_components/St0rage';
+import Psu from './components/part_components/Psu';
+import Case from './components/part_components/Case';
+import Cooler from './components/part_components/Cooler';
+import Accessories from './components/part_components/Accessories';
+import Fan from './components/part_components/Fan';
 
 function App() {
   return (
@@ -20,6 +30,20 @@ function App() {
           <Route exact path='/newbuild' component={Newbuild} />
           <Route exact path='/mybuilds' component={MyBuilds} />
           <Route exact path='/parts' component={Parts} />
+          <Route exact path='/parts/cpu' component={Cpu} />
+               <Route exact path='/parts/ram' component={Ram} />
+               <Route exact path='/parts/motherboard' component={Motherboard} />
+               <Route exact path='/parts/gpu' component={Gpu} />
+
+                 {/* note: storage is spelled with a '0' rather than an 'o' to prevent react from trying to implement local-storage or other types of storage */}
+                 {/* storage component will be for hdd and ssd */}
+
+               <Route exact path='/parts/storage' component={St0rage} />
+               <Route exact path='/parts/psu' component={Psu} />
+               <Route exact path='/parts/case' component={Case} />
+               <Route exact path='/parts/cooler' component={Cooler} />
+               <Route exact path='/parts/accessories' component={Accessories} />
+               <Route exact path='/parts/fan' component={Fan} />
         </Switch>
 
       <Footer/>
