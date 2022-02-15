@@ -30,20 +30,27 @@ function App() {
           <Route exact path='/newbuild' component={Newbuild} />
           <Route exact path='/mybuilds' component={MyBuilds} />
           <Route exact path='/parts' component={Parts} />
-          <Route exact path='/parts/cpu' component={Cpu} />
-               <Route exact path='/parts/ram' component={Ram} />
-               <Route exact path='/parts/motherboard' component={Motherboard} />
-               <Route exact path='/parts/gpu' component={Gpu} />
-
-                 {/* note: storage is spelled with a '0' rather than an 'o' to prevent react from trying to implement local-storage or other types of storage */}
-                 {/* storage component will be for hdd and ssd */}
-
-               <Route exact path='/parts/storage' component={St0rage} />
-               <Route exact path='/parts/psu' component={Psu} />
-               <Route exact path='/parts/case' component={Case} />
-               <Route exact path='/parts/cooler' component={Cooler} />
-               <Route exact path='/parts/accessories' component={Accessories} />
-               <Route exact path='/parts/fan' component={Fan} />
+          <Route
+          path="/parts"
+          render={({ match: { url } }) => (
+            <>
+              <Route path={`${url}/`} component={Parts} exact/>
+              <Route path={`${url}/cpu`} component={Cpu} />
+              <Route path={`${url}/gpu`} component={Gpu} />
+              <Route path={`${url}/ram`} component={Ram} />
+              <Route path={`${url}/motherboard`} component={Motherboard} />
+                {/* note: storage is spelled with a '0' rather than an 'o' to prevent react from trying to implement localstorage or other types of storage */}
+                {/* storage component will be for hdd and ssd */}
+              <Route path={`${url}/storage`} component={St0rage} />
+              <Route path={`${url}/psu`} component={Psu} />
+              <Route path={`${url}/case`} component={Case} />
+              <Route path={`${url}/cooler`} component={Cooler} />
+              <Route path={`${url}/accessories`} component={Accessories} />
+              <Route path={`${url}/fan`} component={Fan} />
+            </>
+          )}
+        />
+               
         </Switch>
 
       <Footer/>
@@ -54,23 +61,20 @@ function App() {
 
 export default App;
 
-        // <Route
-        //   path="/parts"
-        //   render={({ match: { url } }) => (
-        //     <>
-        //       <Route path={`${url}/`} component={Parts} exact/>
-        //       <Route path={`${url}/cpu`} component={Cpu} />
-        //       <Route path={`${url}/gpu`} component={Gpu} />
-        //       <Route path={`${url}/ram`} component={Ram} />
-        //       <Route path={`${url}/motherboard`} component={Motherboard} />
-        //         {/* note: storage is spelled with a '0' rather than an 'o' to prevent react from trying to implement localstorage or other types of storage */}
-        //         {/* storage component will be for hdd and ssd */}
-        //       <Route path={`${url}/storage`} component={St0rage} />
-        //       <Route path={`${url}/psu`} component={Psu} />
-        //       <Route path={`${url}/case`} component={Case} />
-        //       <Route path={`${url}/cooler`} component={Cooler} />
-        //       <Route path={`${url}/accessories`} component={Accessories} />
-        //       <Route path={`${url}/fan`} component={Fan} />
-        //     </>
-        //   )}
-        // />
+
+
+        
+              // <Route exact path='/parts/cpu' component={Cpu} />
+              // <Route exact path='/parts/ram' component={Ram} />
+              // <Route exact path='/parts/motherboard' component={Motherboard} />
+              // <Route exact path='/parts/gpu' component={Gpu} />
+
+              //    {/* note: storage is spelled with a '0' rather than an 'o' to prevent react from trying to implement local-storage or other types of storage */}
+              //    {/* storage component will be for hdd and ssd */}
+
+              // <Route exact path='/parts/storage' component={St0rage} />
+              // <Route exact path='/parts/psu' component={Psu} />
+              // <Route exact path='/parts/case' component={Case} />
+              // <Route exact path='/parts/cooler' component={Cooler} />
+              // <Route exact path='/parts/accessories' component={Accessories} />
+              // <Route exact path='/parts/fan' component={Fan} />
