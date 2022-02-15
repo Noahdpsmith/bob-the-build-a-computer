@@ -17,6 +17,7 @@ import Case from './components/part_components/Case';
 import Cooler from './components/part_components/Cooler';
 import Accessories from './components/part_components/Accessories';
 import Fan from './components/part_components/Fan';
+import LoginRegister from './components/LoginRegister.js';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route exact path='/about' component={About} />
           <Route exact path='/newbuild' component={Newbuild} />
           <Route exact path='/mybuilds' component={MyBuilds} />
-          <Route exact path='/parts' component={Parts} />
+          <Route exact path='/login' component={LoginRegister} />
           <Route
           path="/parts"
           render={({ match: { url } }) => (
