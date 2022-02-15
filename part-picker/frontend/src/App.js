@@ -61,6 +61,8 @@ function App() {
 
 export default App;
 
+
+
         
               // <Route exact path='/parts/cpu' component={Cpu} />
               // <Route exact path='/parts/ram' component={Ram} />
