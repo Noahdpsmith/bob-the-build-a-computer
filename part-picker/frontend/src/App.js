@@ -51,7 +51,6 @@ function App() {
             </>
           )}
         />
-          <Route path='/parts/cpu/:id' component={IndividualCpu} />
         </Switch>
 
       <Footer/>
