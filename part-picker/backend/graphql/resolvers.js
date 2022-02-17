@@ -3,24 +3,24 @@ import auth from '../utils/auth.js';
 
 const resolvers = {
   Query: {
-    books: async (parent, args, context) => {
+    builds: async (parent, args, context) => {
       console.log(context);
       if (!context.user) throw new Error('Unauthenticated user');
-      return await db.models.Book.find({}).populate('author');
+      return await db.models.Build.find({}).populate('User');
     },
   },
 
   Mutation: {
     login: async (parent, args) => {
       try {
-        const author = await db.models.Author.findOne({ name: args.name });
+        const user = await db.models.User.findOne({ name: args.name });
 
-        if (!author) throw new Error('No author found');
+        if (!user) throw new Error('No user found');
 
-        const token = auth.signToken({ _id: author._id, name: author.name });
+        const token = auth.signToken({ _id: user._id, name: user.name });
         console.log(token);
 
-        return { token, author };
+        return { token, user };
       } catch (error) {
         console.log(error);
       }
