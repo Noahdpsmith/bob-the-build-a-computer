@@ -3,6 +3,7 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: #09090f;
+    min-height: 100vh;
   }
 
 html {
@@ -19,11 +20,29 @@ html {
   width: 25%;
   margin-bottom: 16px;
   padding: 0 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  column-count: 1;
+
+  
+}
+.feet {
+  text-align: center;
+
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
 }
 
 .card {
   box-shadow: 0 8px 8px 0 grey;
-  margin: 8px;
+  margin: 40px;
+
 }
 
 .about-section {
@@ -68,9 +87,49 @@ img {
   width: 100%;
   height: 200px;
 }
-h2 {
+
+h2{
   text-align: center;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ffffff;
 }
+footer {
+  margin: 0;
+  border: 0;
+  font: inherit;
+  line-height: 1.25;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 100;
+  padding: 1rem;
+  z-index: 400;
+  color: #191b2b;
+  box-sizing: inherit;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  align-items: baseline;
+  width: 91.6666666667%;
+  margin-left: auto;
+  margin-right: auto;
+  }
 
 
 @media screen and (max-width: 650px) {
@@ -79,3 +138,4 @@ h2 {
     display: block;
   }
 }
+
