@@ -1,6 +1,9 @@
 {
     "cSpell.words": [
+        "localstorage",
+        "Mobo",
         "mybuilds",
         "Newbuild"
-    ]
+    ],
+    "editor.formatOnSave": true
 }
