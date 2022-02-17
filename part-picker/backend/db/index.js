@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import User from './User.js';
-import Part from './Part';
+import Part from './Part.js';
 import Build from './Build.js';
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/graphql_demo');

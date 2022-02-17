@@ -1,25 +1,34 @@
 import { gql } from "apollo-server-express";
 
 const typeDefs = gql`
-  type Author {
+  type User {
     _id: ID
     name: String
-    books: [Book]
+    builds: [Build]
   }
 
   type Auth {
     token: ID!
-    author: Author
+    user: User
   }
 
-  type Book {
+  type Build {
     _id: ID
-    title: String
-    author: Author
+    name: String
+    user: User
+    part: Part
+  }
+
+  type Part {
+    _id: ID
+    name: String
+    type: String
+    link: String
   }
 
   type Query {
-    books: [Book]
+    builds: [Build]
+    parts: [Part]
   }
 
   type Mutation {
