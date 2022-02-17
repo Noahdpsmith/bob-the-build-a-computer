@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Styled from 'styled-components';
 
 const Footer = () => {
 
@@ -11,5 +11,7 @@ const Footer = () => {
 }
 
 
-
 export default Footer;
+
+const Styledfooter = Styled.footer `
+`
