@@ -6,10 +6,13 @@ const About = () => {
         <div>
             <div class="about-section">
             <h1>About Us Page</h1>
-            <p>We are just a team of lads who want to help people build sick comps</p>
-            <p>we hope you enjoy</p>
-            </div>
-
+            <p>We are just a team of lads who want to help people build sick comps
+                <br></br>
+                hope you enjoy!
+            </p>
+            
+            
+            <div className='lads'>
             <h2>Our Team</h2>
             <div class="row">
             <div class="column">
@@ -60,7 +63,8 @@ const About = () => {
                 </div>
             </div>
             </div>
-            
+            </div>
+            </div>
         </div>
     );
 }

@@ -10,7 +10,7 @@ const LoginRegister = () => {
                             <div className="login">
                                 <div class="login-header">
                                     <h3>LOGIN</h3>
-                                    <p>please enter your credentials to login.</p>
+                                    <p>please enter your login credentials</p>
 
                                 </div>
                             </div>

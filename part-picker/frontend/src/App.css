@@ -42,9 +42,8 @@ html {
 .card {
   box-shadow: 0 8px 8px 0 grey;
   margin: 40px;
-
+  background-color: black;
 }
-
 .about-section {
   padding: 50px;
   text-align: center;
@@ -67,7 +66,7 @@ html {
 }
 
 .title {
-  color: grey;
+  color: white;
 }
 
 /* .button {
@@ -117,7 +116,6 @@ h2{
   border-bottom: 2px solid #ffffff;
 }
 footer {
-  margin: 0;
   border: 0;
   font: inherit;
   line-height: 1.25;
@@ -131,7 +129,7 @@ footer {
   color: #191b2b;
   box-sizing: inherit;
   display: block;
-  margin: 0;
+  margin-top: 100px;
   padding: 0;
   border: 0;
   font: inherit;
@@ -149,6 +147,13 @@ footer {
     margin-top: -31px;
   margin-bottom: 26px;
   
+  }
+  .login-header > h3 {
+    color: purple;
+    font-size: 30px;
+  }
+  .login-header > p {
+    color: purple;
   }
   .form {
     color: black;
@@ -214,6 +219,36 @@ footer {
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     object-fit: contain;
+  }
+  .about-section {
+    text-align: center;
+    background: url('https://user-images.githubusercontent.com/88944710/154864854-ea76f627-5ab8-4bb0-ac37-e1b5ddd9ef17.jpg') center center/cover
+    no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+  }
+  .about-section > h1 {
+    color: #ffffff;
+    font-size: 100px;
+    margin-top: 50px;
+  }
+  .about-section > p {
+    margin-top: 22px;
+    color: #ffffff;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .about-section > h2 {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
   }
   .hero-container > h1 {
     color: #ffffff;

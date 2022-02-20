@@ -6,7 +6,6 @@ const Footer = () => {
     return(
         <div>
             <div class="feet">
-                Resources
             </div>
             <div class="content">
                
