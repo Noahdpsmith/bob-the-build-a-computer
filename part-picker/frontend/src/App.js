@@ -8,15 +8,15 @@ import Parts from './components/Parts.js';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import Cpu from './components/part_components/Cpu';
-import Ram from './components/part_components/Ram';
-import Motherboard from './components/part_components/Mobo';
-import Gpu from './components/part_components/Gpu';
-import St0rage from './components/part_components/St0rage';
-import Psu from './components/part_components/Psu';
-import Case from './components/part_components/Case';
-import Cooler from './components/part_components/Cooler';
-import Accessories from './components/part_components/Accessories';
-import Fan from './components/part_components/Fan';
+// import Ram from './components/part_components/Ram';
+// import Motherboard from './components/part_components/Mobo';
+// import Gpu from './components/part_components/Gpu';
+// import St0rage from './components/part_components/St0rage';
+// import Psu from './components/part_components/Psu';
+// import Case from './components/part_components/Case';
+// import Cooler from './components/part_components/Cooler';
+// import Accessories from './components/part_components/Accessories';
+// import Fan from './components/part_components/Fan';
 import LoginRegister from './components/LoginRegister.js';
 
 import { BuildContextProvider } from './components/context/BuildContext';
@@ -34,26 +34,8 @@ function App() {
           <Route exact path='/newbuild' component={Newbuild} />
           <Route exact path='/mybuilds' component={MyBuilds} />
           <Route exact path='/login' component={LoginRegister} />
-          <Route
-          path="/parts"
-          render={({ match: { url } }) => (
-            <>
-              <Route path={`${url}/`} component={Parts} exact/>
-              <Route path={`${url}/cpu`} component={Cpu} />
-              <Route path={`${url}/gpu`} component={Gpu} />
-              <Route path={`${url}/ram`} component={Ram} />
-              <Route path={`${url}/motherboard`} component={Motherboard} />
-                {/* note: storage is spelled with a '0' rather than an 'o' to prevent react from trying to implement localstorage or other types of storage */}
-                {/* storage component will be for hdd and ssd */}
-              <Route path={`${url}/storage`} component={St0rage} />
-              <Route path={`${url}/psu`} component={Psu} />
-              <Route path={`${url}/case`} component={Case} />
-              <Route path={`${url}/cooler`} component={Cooler} />
-              <Route path={`${url}/accessories`} component={Accessories} />
-              <Route path={`${url}/fan`} component={Fan} />
-            </>
-          )}
-        />
+          <Route exact path='/parts' component={Parts} />
+          
 
         </Switch>
 
@@ -83,3 +65,27 @@ export default App;
               // <Route exact path='/parts/cooler' component={Cooler} />
               // <Route exact path='/parts/accessories' component={Accessories} />
               // <Route exact path='/parts/fan' component={Fan} />
+              
+              
+              
+              
+        //       <Route
+        //   path="/parts"
+        //   render={({ match: { url } }) => (
+        //     <>
+        //       <Route path={`${url}/`} component={Parts} exact/>
+        //       <Route path={`${url}/cpu`} component={Cpu} />
+        //       <Route path={`${url}/gpu`} component={Gpu} />
+        //       <Route path={`${url}/ram`} component={Ram} />
+        //       <Route path={`${url}/motherboard`} component={Motherboard} />
+        //         {/* note: storage is spelled with a '0' rather than an 'o' to prevent react from trying to implement localstorage or other types of storage */}
+        //         {/* storage component will be for hdd and ssd */}
+        //       <Route path={`${url}/storage`} component={St0rage} />
+        //       <Route path={`${url}/psu`} component={Psu} />
+        //       <Route path={`${url}/case`} component={Case} />
+        //       <Route path={`${url}/cooler`} component={Cooler} />
+        //       <Route path={`${url}/accessories`} component={Accessories} />
+        //       <Route path={`${url}/fan`} component={Fan} />
+        //     </>
+        //   )}
+        // />
