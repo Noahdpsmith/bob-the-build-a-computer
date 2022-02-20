@@ -5,7 +5,7 @@ const About = () => {
     return(
         <div>
             <div class="about-section">
-            <h1>About Us Page</h1>
+            <h1>About Us</h1>
             <p>We are just a team of lads who want to help people build sick comps
                 <br></br>
                 hope you enjoy!
@@ -21,7 +21,7 @@ const About = () => {
                 <div class="container">
                     <h2>Noah Smith</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The Foreman</p>
                     <p>noah@gmail.com</p>
                 </div>
                 </div>
@@ -33,7 +33,7 @@ const About = () => {
                 <div class="container">
                     <h2>Matt Larson</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The engineer</p>
                     <p>matt@example.com</p>
                 </div>
                 </div>
@@ -45,7 +45,7 @@ const About = () => {
                 <div class="container">
                     <h2>Steele Kreis</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The Architect</p>
                     <p>steele@example.com</p>
                 </div>
                 </div>
@@ -57,7 +57,7 @@ const About = () => {
                 <div class="container">
                     <h2>Austin W.</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The Muscle</p>
                     <p>Austin@example.com</p>
                 </div>
                 </div>
