@@ -19,8 +19,11 @@ import Accessories from './components/part_components/Accessories';
 import Fan from './components/part_components/Fan';
 import LoginRegister from './components/LoginRegister.js';
 
+import { BuildContextProvider } from './components/context/BuildContext';
+
 function App() {
   return (
+    <BuildContextProvider>
     <Router>
 
       <Header/>
@@ -57,6 +60,7 @@ function App() {
       <Footer/>
 
     </Router>
+    </BuildContextProvider>
   );
 }
 
