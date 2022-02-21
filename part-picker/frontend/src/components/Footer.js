@@ -8,9 +8,7 @@ const Footer = () => {
             <div class="feet">
                 Resources
             </div>
-            <div class="content">
-               
-            </div>
+            
             <footer class="footer">
                 <nav>
                     <div class="row">

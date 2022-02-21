@@ -17,7 +17,7 @@ const Header = () => {
                 <StyledLink className = 'linkButton' to='/newbuild'>New Build</StyledLink>
                 <StyledLink className = 'linkButton' to='/mybuilds'>My Builds</StyledLink>
                 <StyledLink className = 'linkButton' to='/login'>Login</StyledLink>
-                {/* <Link className = 'linkButton' to='/parts'>Parts</Link> */}
+                <Link className = 'linkButton' to='/parts'>Parts</Link>
            </NavDiv>
        </StyledHeader>
     );
@@ -32,9 +32,11 @@ const StyledHeader = Styled.header `
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 8vh;
     background-color: #282838;
+    padding-left: 5vh;
+    padding-right: 5vh;
 `
 const LogoDiv = Styled.div `
     height: 100%;
