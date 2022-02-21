@@ -6,7 +6,6 @@ const Footer = () => {
     return(
         <div>
             <div class="feet">
-                Resources
             </div>
             
             <footer class="footer">
@@ -39,7 +38,6 @@ const Footer = () => {
                     <li><a>Bob the build a computer</a></li>
                     <li><a>a local company</a></li>
                     <li><a>we love you</a></li>
-                    <li><a></a></li>
                     </ul>
                     </div>
                     

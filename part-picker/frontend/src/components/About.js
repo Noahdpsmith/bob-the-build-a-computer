@@ -5,11 +5,14 @@ const About = () => {
     return(
         <div>
             <div class="about-section">
-            <h1>About Us Page</h1>
-            <p>We are just a team of lads who want to help people build sick comps</p>
-            <p>we hope you enjoy</p>
-            </div>
-
+            <h1>About Us</h1>
+            <p>We are just a team of lads who want to help people build sick comps
+                <br></br>
+                hope you enjoy!
+            </p>
+            
+            
+            <div className='lads'>
             <h2>Our Team</h2>
             <div class="row">
             <div class="column">
@@ -18,7 +21,7 @@ const About = () => {
                 <div class="container">
                     <h2>Noah Smith</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The Foreman</p>
                     <p>noah@gmail.com</p>
                 </div>
                 </div>
@@ -30,7 +33,7 @@ const About = () => {
                 <div class="container">
                     <h2>Matt Larson</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The engineer</p>
                     <p>matt@example.com</p>
                 </div>
                 </div>
@@ -42,7 +45,7 @@ const About = () => {
                 <div class="container">
                     <h2>Steele Kreis</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The Architect</p>
                     <p>steele@example.com</p>
                 </div>
                 </div>
@@ -54,13 +57,14 @@ const About = () => {
                 <div class="container">
                     <h2>Austin W.</h2>
                     <p class="title">CoFounder</p>
-                    <p>a super rad dude whos hero is bob the builder</p>
+                    <p>The Muscle</p>
                     <p>Austin@example.com</p>
                 </div>
                 </div>
             </div>
             </div>
-            
+            </div>
+            </div>
         </div>
     );
 }
