@@ -7,9 +7,7 @@ const Footer = () => {
         <div>
             <div class="feet">
             </div>
-            <div class="content">
-               
-            </div>
+            
             <footer class="footer">
                 <nav>
                     <div class="row">
@@ -40,7 +38,6 @@ const Footer = () => {
                     <li><a>Bob the build a computer</a></li>
                     <li><a>a local company</a></li>
                     <li><a>we love you</a></li>
-                    <li><a></a></li>
                     </ul>
                     </div>
                     

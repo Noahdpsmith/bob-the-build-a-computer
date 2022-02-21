@@ -19,7 +19,7 @@ const Homepage = () => {
               <br />
               Click on the button below.
             </p>
-            <Link to="/login"><button class="button1" role="button"><span class="text">Button 64</span></button>
+            <Link to="/login"><button class="button1" role="button"><span class="text">LOGIN</span></button>
 
             </Link>
           </div>
