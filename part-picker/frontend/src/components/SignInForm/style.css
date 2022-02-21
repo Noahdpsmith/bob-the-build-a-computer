@@ -12,6 +12,7 @@
     background-size: 75rem;
     background-repeat: no-repeat;
     background-position: top;
+    display: flex;
 }
 
 .loginHeader{
@@ -34,7 +35,11 @@
     padding: 1.25rem
 }
 
-
+.babbles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .signInBtn {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;

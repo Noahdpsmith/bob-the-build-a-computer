@@ -73,7 +73,7 @@ class SignInForm extends Component {
     render() {
         const {errors} = this.state;
         return (
-            <div>
+            <div className="babbles">
                 <div>
                     {this.state.errorLogin ? 
                         <Jumbo biline="Looks like you might be new here, did you want to try creating a new account instead? Or you can try to login again."></Jumbo>
