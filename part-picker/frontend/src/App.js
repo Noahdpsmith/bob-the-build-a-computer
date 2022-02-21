@@ -17,9 +17,11 @@ import Cpu from './components/part_components/Cpu';
 // import Cooler from './components/part_components/Cooler';
 // import Accessories from './components/part_components/Accessories';
 // import Fan from './components/part_components/Fan';
-import LoginRegister from './components/LoginRegister.js';
+// import LoginRegister from './components/LoginRegister.js';
 
 import { BuildContextProvider } from './components/context/BuildContext';
+import Signup from './components/SignInForm/index';
+import SignInForm from './components/SignInForm/index';
 
 function App() {
   return (
@@ -33,13 +35,13 @@ function App() {
           <Route exact path='/about' component={About} />
           <Route exact path='/newbuild' component={Newbuild} />
           <Route exact path='/mybuilds' component={MyBuilds} />
-          <Route exact path='/login' component={LoginRegister} />
+          <Route exact path='/login' component={SignInForm} />
           <Route exact path='/parts' component={Parts} />
           
 
         </Switch>
 
-      {/* <Footer/> */}
+      <Footer/>
 
     </Router>
     </BuildContextProvider>
