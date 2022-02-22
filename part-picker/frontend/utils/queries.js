@@ -12,11 +12,12 @@ export const QUERY_PARTS = gql`
 `;
 
 export const QUERY_BUILDS = gql`
-  query Builds {
-    builds {
+  query builds($username: String) {
+    builds(username: $username) {
+      _id
       name
-      user
+      User
       parts
     }
-}
+  }
 `;
