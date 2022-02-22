@@ -47,6 +47,11 @@ const NewBuild = () => {
             name: 'test2',
             type: 'cpu',
             link: 'test2',
+        },
+        {
+            name: 'test3',
+            type: 'cpu',
+            link: 'test3',
         }
     ];
 
@@ -63,8 +68,8 @@ const NewBuild = () => {
 
     const [cpuNameState, setCpuNameState] = useState('Choose your CPU');
     const [cpuLinkState, setCpuLinkState] = useState('Check links for compatibility with all other parts before purchasing');
-    const [gpuNameState, setGPUNameState] = useState('Choose your GPU');
-    const [gpuLinkState, setGPUNameLinkState] = useState('Check links for compatibility with all other parts before purchasing');
+    const [gpuNameState, setGpuNameState] = useState('Choose your GPU');
+    const [gpuLinkState, setGpuLinkState] = useState('Check links for compatibility with all other parts before purchasing');
     const [ramNameState, setRamNameState] = useState('Choose your RAM');
     const [ramLinkState, setRamLinkState] = useState('Check links for compatibility with all other parts before purchasing');
     const [moboNameState, setMoboNameState] = useState('Choose your Motherboard');
@@ -96,13 +101,17 @@ const NewBuild = () => {
                     <button onClick={() => setShowCpu(true)}>Choose Part</button>
                 </div>
                     <div style={{ display: showCpu ? "block" : "none"}}>
-                        {testArray.map((data) => {
+                        {cpuArray.map((data) => {
                             return(
                                 <div>
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
-                                    
+                                    <button onClick={() => {
+                                        setCpuNameState(data.name);
+                                        setCpuLinkState(data.link);
+                                        setShowCpu(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -122,6 +131,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setMoboNameState(data.name);
+                                        setMoboLinkState(data.link);
+                                        setShowMobo(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -141,6 +155,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setGpuNameState(data.name);
+                                        setGpuLinkState(data.link);
+                                        setShowGpu(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -160,6 +179,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setRamNameState(data.name);
+                                        setRamLinkState(data.link);
+                                        setShowRam(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -179,6 +203,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setCoolerNameState(data.name);
+                                        setCoolerLinkState(data.link);
+                                        setShowCooler(false);                                        
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -198,6 +227,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setStorageNameState(data.name);
+                                        setStorageLinkState(data.link);
+                                        setShowStorage(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -217,6 +251,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setCaseNameState(data.name);
+                                        setCaseLinkState(data.link);
+                                        setShowCase(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -236,6 +275,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setPsuNameState(data.name);
+                                        setPsuLinkState(data.link);
+                                        setShowPsu(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -255,6 +299,11 @@ const NewBuild = () => {
                                     <h3>{data.name}</h3>
                                     <h3>{data.type}</h3>
                                     <h3>{data.link}</h3>
+                                    <button onClick={() => {
+                                        setFanNameState(data.name);
+                                        setFanLinkState(data.link);
+                                        setShowFan(false);
+                                    }}>Choose Part</button>
                                 </div>
                             )
                         })}
@@ -262,7 +311,7 @@ const NewBuild = () => {
                         {/* <Fan/> */}
 
             </div>
-
+                        <button>Save Build</button>
         </div>
     );
 }
