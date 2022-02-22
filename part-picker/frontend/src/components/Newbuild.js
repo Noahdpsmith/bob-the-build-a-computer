@@ -37,23 +37,22 @@ const NewBuild = () => {
     const fanArray = buildData.filter(part => part.type === 'fan');
     const motherboardArray = buildData.filter(part => part.type === 'mobo');
 
+    const [newBuildArray, setNewBuildArray] = useState([]);
+    const onClickArray = (data) => {
+        setNewBuildArray(arr => [...arr, data])
+    }
     const testArray = [
         {
-            name: 'test1',
             type: 'cpu',
-            link: 'test1',
+            name: 'Intel i7-8700K',
+            link: 'amazon.com',
         },
         {
-            name: 'test2',
             type: 'cpu',
-            link: 'test2',
-        },
-        {
-            name: 'test3',
-            type: 'cpu',
-            link: 'test3',
+            name: 'test222',
+            link: 'amazon.com',
         }
-    ];
+    ]
 
     const [showCpu, setShowCpu] = useState(false);
     const [showRam, setShowRam] = useState(false);
@@ -101,7 +100,7 @@ const NewBuild = () => {
                     <button onClick={() => setShowCpu(true)}>Choose Part</button>
                 </div>
                     <div style={{ display: showCpu ? "block" : "none"}}>
-                        {cpuArray.map((data) => {
+                        {testArray.map((data) => {
                             return(
                                 <div>
                                     <h3>{data.name}</h3>
@@ -111,6 +110,7 @@ const NewBuild = () => {
                                         setCpuNameState(data.name);
                                         setCpuLinkState(data.link);
                                         setShowCpu(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -135,6 +135,7 @@ const NewBuild = () => {
                                         setMoboNameState(data.name);
                                         setMoboLinkState(data.link);
                                         setShowMobo(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -159,6 +160,7 @@ const NewBuild = () => {
                                         setGpuNameState(data.name);
                                         setGpuLinkState(data.link);
                                         setShowGpu(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -183,6 +185,7 @@ const NewBuild = () => {
                                         setRamNameState(data.name);
                                         setRamLinkState(data.link);
                                         setShowRam(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -206,7 +209,8 @@ const NewBuild = () => {
                                     <button onClick={() => {
                                         setCoolerNameState(data.name);
                                         setCoolerLinkState(data.link);
-                                        setShowCooler(false);                                        
+                                        setShowCooler(false);    
+                                        {onClickArray(data)}                                    
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -231,6 +235,7 @@ const NewBuild = () => {
                                         setStorageNameState(data.name);
                                         setStorageLinkState(data.link);
                                         setShowStorage(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -255,6 +260,7 @@ const NewBuild = () => {
                                         setCaseNameState(data.name);
                                         setCaseLinkState(data.link);
                                         setShowCase(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -279,6 +285,7 @@ const NewBuild = () => {
                                         setPsuNameState(data.name);
                                         setPsuLinkState(data.link);
                                         setShowPsu(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -303,6 +310,7 @@ const NewBuild = () => {
                                         setFanNameState(data.name);
                                         setFanLinkState(data.link);
                                         setShowFan(false);
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -311,7 +319,14 @@ const NewBuild = () => {
                         {/* <Fan/> */}
 
             </div>
+            
                         <button>Save Build</button>
+                        {/* testing the ability to push to this array so we can access it later */}
+                        {/* <div>{newBuildArray.map( e =>
+                            <div>{ e.name }, { e.link }, {e.type}</div>
+                            
+                            )}
+                        </div> */}
         </div>
     );
 }
@@ -333,3 +348,7 @@ export default NewBuild;
 //                             )
 //                         })}
 //                     </div> 
+
+// testing the array to store all the data
+// newBuildArray.push(data);
+// console.log(newBuildArray);
