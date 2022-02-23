@@ -5,7 +5,7 @@ const BuildContext = createContext();
 
 // create context provider
 const BuildContextProvider = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
         <BuildContext.Provider value={12345}>
             {props.children}

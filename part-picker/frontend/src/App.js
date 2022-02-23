@@ -7,7 +7,7 @@ import MyBuilds from './components/MyBuilds.js';
 import Parts from './components/Parts.js';
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
-import Cpu from './components/part_components/Cpu';
+// import Cpu from './components/part_components/Cpu';
 // import Ram from './components/part_components/Ram';
 // import Motherboard from './components/part_components/Mobo';
 // import Gpu from './components/part_components/Gpu';
@@ -22,9 +22,31 @@ import Cpu from './components/part_components/Cpu';
 import { BuildContextProvider } from './components/context/BuildContext';
 import Signup from './components/SignInForm/index';
 import SignInForm from './components/SignInForm/index';
+import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
+    <ApolloProvider client={client}>
     <BuildContextProvider>
     <Router>
 
@@ -45,6 +67,7 @@ function App() {
 
     </Router>
     </BuildContextProvider>
+    </ApolloProvider>
   );
 }
 
