@@ -9,33 +9,38 @@ import axios from 'axios';
 // import Cooler from './part_components/Cooler';
 // import Cpu from './part_components/Cpu';
 // import Fan from './part_components/Fan';
-
+import { useQuery } from '@apollo/client';
+import { ADD_BUILD } from '../utils/mutations';
+import { QUERY_PARTS } from '../utils/queries';
 // import { useBuildContext } from './context/BuildContext';
 
 const NewBuild = () => {
     // const buildContext = useBuildContext();
 
     const [buildData, setBuildData] = useState([]);
-    useEffect(() => {
-        axios.get('//set-api-link-here')
-        .then(res => {
-            console.log(res)
-            setBuildData(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }, []);
+    // useEffect(() => {
+    //     axios.get('//set-api-link-here')
+    //     .then(res => {
+    //         console.log(res)
+    //         setBuildData(res.data)
+    //     })
+    //     .catch(err => {
+    //         console.log(err)
+    //     })
+    // }, []);
 
-    const cpuArray = buildData.filter(part => part.type === 'cpu');
-    const gpuArray = buildData.filter(part => part.type === 'gpu');
-    const ramArray = buildData.filter(part => part.type === 'ram');
-    const storageArray = buildData.filter(part => part.type === 'storage');
-    const psuArray = buildData.filter(part => part.type === 'psu');
-    const caseArray = buildData.filter(part => part.type === 'case');
-    const coolerArray = buildData.filter(part => part.type === 'cooler');
-    const fanArray = buildData.filter(part => part.type === 'fan');
-    const motherboardArray = buildData.filter(part => part.type === 'mobo');
+    const { data } = useQuery(QUERY_PARTS);
+    const parts = data?.Parts || [];
+
+    const cpuArray = parts.filter(part => part.type === 'cpu');
+    const gpuArray = parts.filter(part => part.type === 'gpu');
+    const ramArray = parts.filter(part => part.type === 'ram');
+    const storageArray = parts.filter(part => part.type === 'storage');
+    const psuArray = parts.filter(part => part.type === 'psu');
+    const caseArray = parts.filter(part => part.type === 'case');
+    const coolerArray = parts.filter(part => part.type === 'cooler');
+    const fanArray = parts.filter(part => part.type === 'fan');
+    const motherboardArray = parts.filter(part => part.type === 'mobo');
 
     const [newBuildArray, setNewBuildArray] = useState([]);
     const onClickArray = (data) => {
@@ -100,7 +105,7 @@ const NewBuild = () => {
                     <button onClick={() => setShowCpu(true)}>Choose Part</button>
                 </div>
                     <div style={{ display: showCpu ? "block" : "none"}}>
-                        {testArray.map((data) => {
+                        {cpuArray.map((data) => {
                             return(
                                 <div>
                                     <h3>{data.name}</h3>
@@ -110,7 +115,7 @@ const NewBuild = () => {
                                         setCpuNameState(data.name);
                                         setCpuLinkState(data.link);
                                         setShowCpu(false);
-                                        {onClickArray(data)}
+                                        {onClickArray(data._id)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -135,7 +140,7 @@ const NewBuild = () => {
                                         setMoboNameState(data.name);
                                         setMoboLinkState(data.link);
                                         setShowMobo(false);
-                                        {onClickArray(data)}
+                                        {onClickArray(data._id)}
                                     }}>Choose Part</button>
                                 </div>
                             )
