@@ -20,10 +20,10 @@ import Footer from './components/Footer.js';
 // import LoginRegister from './components/LoginRegister.js';
 
 import { BuildContextProvider } from './components/context/BuildContext';
-import Signup from './components/SignInForm/index';
+
 import SignInForm from './components/SignInForm/index';
-import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
