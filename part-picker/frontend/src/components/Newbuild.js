@@ -14,6 +14,7 @@ import { useMutation } from '@apollo/client';
 // import { ADD_BUILD } from '../utils/mutations';
 import { QUERY_PARTS } from '../utils/queries';
 // import { useBuildContext } from './context/BuildContext';
+import Styled from 'styled-components';
 
 const NewBuild = () => {
     // const buildContext = useBuildContext();
@@ -93,249 +94,264 @@ const NewBuild = () => {
     //         })
     //     }
     // }
+
+    const dummyArray = [
+        {
+            name: 'CPU',
+            type: 'cpu',
+            link: 'https://www.amazon.com/Intel-Core-i7-9750H-Processor-LGA-1151-Socket-1151/dp/B07XJZQW3P/ref=sr_1_1?keywords=intel+core+i7&qid=1589737983&sr=8-1',
+
+        },
+        {
+            name: 'cpu',
+            type: 'cpu',
+            link: 'https://www.amazon.com/AMD-Radeon-RX-580-Graphics-Card-8GB/dp/B07XJZQW3P/ref=sr_1_1?keywords=amd+radeon+rx+580&qid=1589737983&sr=8-1',
+        }
+    ]
     
     return(
         <div>
+            <Title>
+            Start a new build here
+            </Title>
+            <BuildContainer>
 
-            <h1>Start a new build here</h1>
-                
-            <div className='build-container'>
-
-                <div className='build-part-container'>
-                    <h2 value='cpu'>CPU</h2>
-                    <h3 value={cpuNameState}>{cpuNameState}</h3>
+                <PartContainer>
+                    <PartName value='cpu'>CPU</PartName>
+                    <PartLink value={cpuNameState}>{cpuNameState}</PartLink>
                     <h3 value={cpuLinkState}>{cpuLinkState}</h3>
-                    <button onClick={() => setShowCpu(true)}>Choose Part</button>
-                </div>
+                    <StyledButtonOne onClick={() => setShowCpu(true)}>Choose Part</StyledButtonOne>
+                </PartContainer>
                     <div style={{ display: showCpu ? "block" : "none"}}>
                         {cpuArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setCpuNameState(data.name);
                                         setCpuLinkState(data.link);
                                         setShowCpu(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Cpu/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='mobo'>Motherboard</h2>
-                    <h3 value={moboNameState}>{moboNameState}</h3>
+                <PartContainer>
+                    <PartName value='mobo'>Motherboard</PartName>
+                    <PartLink value={moboNameState}>{moboNameState}</PartLink>
                     <h3 value={moboLinkState}>{moboLinkState}</h3>
-                    <button onClick={() => setShowMobo(true)}>Choose Part</button>
-                </div>
+                    <StyledButtonOne onClick={() => setShowMobo(true)}>Choose Part</StyledButtonOne>
+                </PartContainer>
                     <div style={{ display: showMobo ? "block" : "none"}}>
                         {motherboardArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setMoboNameState(data.name);
                                         setMoboLinkState(data.link);
                                         setShowMobo(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Motherboard/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='gpu'>GPU</h2>
-                    <h3 value={gpuNameState}>{gpuNameState}</h3> 
+                <PartContainer>
+                    <PartName value='gpu'>GPU</PartName>
+                    <PartLink value={gpuNameState}>{gpuNameState}</PartLink> 
                     <h3 value={gpuLinkState}>{gpuLinkState}</h3>      
-                    <button onClick={() => setShowGpu(true)}>Choose Part</button>                 
-                </div>
+                    <StyledButtonOne onClick={() => setShowGpu(true)}>Choose Part</StyledButtonOne>                 
+                </PartContainer>
                     <div style={{ display: showGpu ? "block" : "none"}}>
                         {gpuArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setGpuNameState(data.name);
                                         setGpuLinkState(data.link);
                                         setShowGpu(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Gpu/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='ram'>Ram</h2>
-                    <h3 value={ramNameState}>{ramNameState}</h3>  
+                <PartContainer>
+                    <PartName value='ram'>Ram</PartName>
+                    <PartLink value={ramNameState}>{ramNameState}</PartLink>  
                     <h3 value={ramLinkState}>{ramLinkState}</h3>       
-                    <button onClick={() => setShowRam(true)}>Choose Part</button>               
-                </div>
+                    <StyledButtonOne onClick={() => setShowRam(true)}>Choose Part</StyledButtonOne>               
+                </PartContainer>
                     <div style={{ display: showRam ? "block" : "none"}}>
                         {ramArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setRamNameState(data.name);
                                         setRamLinkState(data.link);
                                         setShowRam(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Ram/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='cooler'>Cooler</h2>
-                    <h3 value={coolerNameState}>{coolerNameState}</h3>
+                <PartContainer>
+                    <PartName value='cooler'>Cooler</PartName>
+                    <PartLink value={coolerNameState}>{coolerNameState}</PartLink>
                     <h3 value={coolerLinkState}>{coolerLinkState}</h3>
-                    <button onClick={() => setShowCooler(true)}>Choose Part</button>
-                </div>
+                    <StyledButtonOne onClick={() => setShowCooler(true)}>Choose Part</StyledButtonOne>
+                </PartContainer>
                     <div style={{ display: showCooler ? "block" : "none"}}>
                         {coolerArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setCoolerNameState(data.name);
                                         setCoolerLinkState(data.link);
                                         setShowCooler(false);    
                                         {onClickArray(data)}                                    
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Cooler/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='storage'>Storage</h2>
-                    <h3 value={storageNameState}>{storageNameState}</h3>
+                <PartContainer>
+                    <PartName value='storage'>Storage</PartName>
+                    <PartLink value={storageNameState}>{storageNameState}</PartLink>
                     <h3 value={storageLinkState}>{storageLinkState}</h3>
-                    <button onClick={() => setShowStorage(true)}>Choose Part</button>
-                </div>
+                    <StyledButtonOne onClick={() => setShowStorage(true)}>Choose Part</StyledButtonOne>
+                </PartContainer>
                     <div style={{ display: showStorage ? "block" : "none"}}>
                         {storageArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setStorageNameState(data.name);
                                         setStorageLinkState(data.link);
                                         setShowStorage(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <St0rage/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='case'>Case</h2>
-                    <h3 value={caseNameState}>{caseNameState}</h3>
+                <PartContainer>
+                    <PartName value='case'>Case</PartName>
+                    <PartLink value={caseNameState}>{caseNameState}</PartLink>
                     <h3 value={caseLinkState}>{caseLinkState}</h3>
-                    <button onClick={() => setShowCase(true)}>Choose Part</button>
-                </div>
+                    <StyledButtonOne onClick={() => setShowCase(true)}>Choose Part</StyledButtonOne>
+                </PartContainer>
                     <div style={{ display: showCase ? "block" : "none"}}>
                         {caseArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setCaseNameState(data.name);
                                         setCaseLinkState(data.link);
                                         setShowCase(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Case/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='psu'>PSU</h2>
-                    <h3 value={psuNameState}>{psuNameState}</h3>
+                <PartContainer>
+                    <PartName value='psu'>PSU</PartName>
+                    <PartLink value={psuNameState}>{psuNameState}</PartLink>
                     <h3 value={psuLinkState}>{psuLinkState}</h3>
-                    <button onClick={() => setShowPsu(true)}>Choose Part</button>
-                </div>
+                    <StyledButtonOne onClick={() => setShowPsu(true)}>Choose Part</StyledButtonOne>
+                </PartContainer>
                     <div style={{ display: showPsu ? "block" : "none"}}>
                         {psuArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setPsuNameState(data.name);
                                         setPsuLinkState(data.link);
                                         setShowPsu(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Psu/> */}
 
-                <div className='build-part-container'>
-                    <h2 value='fan'>Fan</h2>
-                    <h3 value={fanNameState}>{fanNameState}</h3>    
+                <PartContainer>
+                    <PartName value='fan'>Fan</PartName>
+                    <PartLink value={fanNameState}>{fanNameState}</PartLink>    
                     <h3 value={fanLinkState}>{fanLinkState}</h3>
-                    <button onClick={() => setShowFan(true)}>Choose Part</button>
-                </div>
+                    <StyledButtonOne onClick={() => setShowFan(true)}>Choose Part</StyledButtonOne>
+                </PartContainer>
                     <div style={{ display: showFan ? "block" : "none"}}>
                         {fanArray.map((data) => {
                             return(
-                                <div>
-                                    <h3>{data.name}</h3>
-                                    <h3>{data.type}</h3>
-                                    <h3>{data.link}</h3>
-                                    <button onClick={() => {
+                                <HiddenDiv>
+                                    <InnerDiv>{data.name}</InnerDiv>
+                                    <InnerDiv>{data.type}</InnerDiv>
+                                    <InnerDiv>{data.link}</InnerDiv>
+                                    <StyledButtonOne onClick={() => {
                                         setFanNameState(data.name);
                                         setFanLinkState(data.link);
                                         setShowFan(false);
                                         {onClickArray(data)}
-                                    }}>Choose Part</button>
-                                </div>
+                                    }}>Choose Part</StyledButtonOne>
+                                </HiddenDiv>
                             )
                         })}
                     </div>
                         {/* <Fan/> */}
 
-            </div>
-            
-                        <button>Save Build</button>
+            </BuildContainer>
+                        <ButtonDiv>
+                        <StyledButtonTwo>Save Build</StyledButtonTwo>
+                        </ButtonDiv>
                         {/* testing the ability to push to this array so we can access it later */}
-                        <div>{newBuildArray.map( e =>
+                        {/* <div>{newBuildArray.map( e =>
                             <div>{ e._id }</div>
                             
                             )}
-                        </div>
-            {error && <div>Something went wrong...</div>}
+                        </div> */}
+            
         </div>
     );
 }
@@ -343,6 +359,85 @@ const NewBuild = () => {
 
 
 export default NewBuild;
+
+const Title = Styled.div `
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+`
+const BuildContainer = Styled.div `
+    background-color: #282838;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 1rem .75rem;
+`
+const PartContainer = Styled.div `
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5rem;
+    border-bottom: 2px solid white;
+    padding: 0;
+    `
+const PartName = Styled.h3 `
+    width: 12ch;
+    /* border: 1px solid white; */
+    font-size: 1.25rem;
+    text-align: left;
+`
+const PartLink = Styled.h3 `
+    width: 25ch;
+    font-size: 1.25rem;
+    text-align: left;
+`
+const StyledButtonOne = Styled.button `
+    font-size: 1.25rem;
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    color: white;
+    text-align: left;
+    white-space: nowrap;
+    &:hover {
+        border-bottom: 1px solid white;
+    border-radius: 3px;
+    }
+`
+const HiddenDiv = Styled.div `
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    `
+const InnerDiv = Styled.div `
+    font-size: 1rem;
+    /* border: 1px solid white; */
+    min-width: 20ch;
+`
+
+const StyledButtonTwo = Styled.button `
+    font-size: 2rem;
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    color: white;
+    text-align: center;
+    margin: 3rem auto;
+    
+    &:hover {
+        border-bottom: 1px solid white;
+        border-radius: 5px;
+    }
+`
+const ButtonDiv = Styled.div `
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+`
 
 // format for all the parts to be displayed in the dropdown menu
 
