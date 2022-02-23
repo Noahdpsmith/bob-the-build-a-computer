@@ -9,15 +9,16 @@ import axios from 'axios';
 // import Cooler from './part_components/Cooler';
 // import Cpu from './part_components/Cpu';
 // import Fan from './part_components/Fan';
-import { useQuery } from '@apollo/client';
-import { ADD_BUILD } from '../utils/mutations';
+import { useQuery} from '@apollo/client';
+import { useMutation } from '@apollo/client';
+// import { ADD_BUILD } from '../utils/mutations';
 import { QUERY_PARTS } from '../utils/queries';
 // import { useBuildContext } from './context/BuildContext';
 
 const NewBuild = () => {
     // const buildContext = useBuildContext();
 
-    const [buildData, setBuildData] = useState([]);
+    // const [buildData, setBuildData] = useState([]);
     // useEffect(() => {
     //     axios.get('//set-api-link-here')
     //     .then(res => {
@@ -28,6 +29,10 @@ const NewBuild = () => {
     //         console.log(err)
     //     })
     // }, []);
+
+    
+
+
 
     const { data } = useQuery(QUERY_PARTS);
     const parts = data?.Parts || [];
@@ -46,18 +51,6 @@ const NewBuild = () => {
     const onClickArray = (data) => {
         setNewBuildArray(arr => [...arr, data])
     }
-    const testArray = [
-        {
-            type: 'cpu',
-            name: 'Intel i7-8700K',
-            link: 'amazon.com',
-        },
-        {
-            type: 'cpu',
-            name: 'test222',
-            link: 'amazon.com',
-        }
-    ]
 
     const [showCpu, setShowCpu] = useState(false);
     const [showRam, setShowRam] = useState(false);
@@ -89,7 +82,17 @@ const NewBuild = () => {
     const [fanNameState, setFanNameState] = useState('Choose your Fan');
     const [fanLinkState, setFanLinkState] = useState('Check links for compatibility with all other parts before purchasing');
 
-    
+    // const [addNewBuild, { error } ] = useMutation(ADD_BUILD);
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         await addBuild({
+    //             variables: {
+
+    //             }
+    //         })
+    //     }
+    // }
     
     return(
         <div>
@@ -115,7 +118,7 @@ const NewBuild = () => {
                                         setCpuNameState(data.name);
                                         setCpuLinkState(data.link);
                                         setShowCpu(false);
-                                        {onClickArray(data._id)}
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -140,7 +143,7 @@ const NewBuild = () => {
                                         setMoboNameState(data.name);
                                         setMoboLinkState(data.link);
                                         setShowMobo(false);
-                                        {onClickArray(data._id)}
+                                        {onClickArray(data)}
                                     }}>Choose Part</button>
                                 </div>
                             )
@@ -327,11 +330,12 @@ const NewBuild = () => {
             
                         <button>Save Build</button>
                         {/* testing the ability to push to this array so we can access it later */}
-                        {/* <div>{newBuildArray.map( e =>
-                            <div>{ e.name }, { e.link }, {e.type}</div>
+                        <div>{newBuildArray.map( e =>
+                            <div>{ e._id }</div>
                             
                             )}
-                        </div> */}
+                        </div>
+            {error && <div>Something went wrong...</div>}
         </div>
     );
 }
