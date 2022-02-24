@@ -20,16 +20,16 @@ class SignInForm extends Component {
 
     newUser = event => {
         event.preventDefault();
-        if (this.state.newUsername && this.state.newUsername) {
-            API.createUser({
-            username: this.state.newUsername,
-            password: this.state.newPassword
-        })
-        .then(res => window.location.replace("/myaccount/" + res.data._id))
-        .catch(err => this.setState({
-                errorLogin: true
-        }));
-        } 
+        // if (this.state.newUsername && this.state.newUsername) {
+        //     API.createUser({
+        //     username: this.state.newUsername,
+        //     password: this.state.newPassword
+        // })
+        // .then(res => window.location.replace("/myaccount/" + res.data._id))
+        // .catch(err => this.setState({
+        //         errorLogin: true
+        // }));
+        // } 
     }
 
     validateForm = (errors) => {
@@ -58,17 +58,17 @@ class SignInForm extends Component {
     
     handleFormSubmit = (event) => {
         event.preventDefault();
-        if(this.validateForm(this.state.errors)) {
-            console.info('Valid Form')
-          }else{
-            console.error('Invalid Form')
-          }
-        API.login(this.state.logInUsername, this.state.logInPassword)
-            .then(res => window.location.replace("/myaccount/" + res.data._id))
-        .catch(err => this.setState({
-            errorLogin: true
-            })
-        );
+        // if(this.validateForm(this.state.errors)) {
+        //     console.info('Valid Form')
+        //   }else{
+        //     console.error('Invalid Form')
+        //   }
+        // API.login(this.state.logInUsername, this.state.logInPassword)
+        //     .then(res => window.location.replace("/myaccount/" + res.data._id))
+        // .catch(err => this.setState({
+        //     errorLogin: true
+        //     })
+        // );
     }
 
     render() {
